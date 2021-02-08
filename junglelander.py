@@ -83,7 +83,7 @@ while plane.flying:
         
         if missile.active:
             if missile.x >= tree.x *10 and missile.x <= ((tree.x+1)*10)-1:
-                if missile.y >= tree.treeheight*10:
+                if missile.y >= height - tree.treeheight*10:
                     missile.active=False
                     tree.treeheight -= 5
                     display.set_pen(brightwhite)
