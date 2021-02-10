@@ -121,6 +121,9 @@ while bird.flying:
     if display.is_pressed(display.BUTTON_B):
         colonade=[]
         reset()
+        #Thanks to Stephan who pointed out was easy to get a massive high score 
+        # because I had forgotten to reset the score, so to reset it I need to add:
+        score = 0
         bird.y=20
         bird.crashed=False
         
