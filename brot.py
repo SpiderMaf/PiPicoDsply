@@ -31,6 +31,9 @@ ImaginaryEnd = 1 *zoom
 
 palette = []
 display.clear()
+#One of the issues on the video was it was displaying the old images whilst generating the new one
+#So added the update below to send a clear screen to the display
+display.update()
 go = True
 
 while go:
