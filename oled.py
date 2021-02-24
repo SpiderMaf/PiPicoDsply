@@ -1,6 +1,8 @@
 from machine import Pin, I2C
 import ssd1306
 
+# Oled Driver direct link:  https://raw.githubusercontent.com/RuiSantosdotme/ESP-MicroPython/master/code/Others/OLED/ssd1306.py
+
 i2c = I2C(0, scl=Pin(21), sda=Pin(20))
 
 width = 128
