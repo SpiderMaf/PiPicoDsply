@@ -9,7 +9,8 @@ height = display.get_height()
 display_buffer = bytearray(width * height * 2)  # 2-bytes per pixel (RGB565)
 display.init(display_buffer)
 
-display.set_backlight(1.0)
+#Removed as this was removed so errors in newer picoexplorer versions
+#display.set_backlight(1.0)
 
 
 iterations = 80
@@ -21,8 +22,10 @@ def mandelbrot(c):
         z = z*z + c
         n += 1
     return n
-#Change the zoom below to zoom in - the smaller the number the greater the zoom.  Zoom too much on the wrong part may give no visible part of the fractal on the display
-zoom = 0.95
+#Change the zoom below to zoom in - the smaller the number the greater the zoom.  
+#Zoom too much on the wrong part may give no visible part of the fractal on the display
+#the smaller the zoom amount the longer the picture may take to generate.
+zoom = 1
 # Plot window
 RealStart = -2 * zoom
 RealEnd= 1 * zoom
@@ -44,7 +47,13 @@ while go:
             colour = 255 - int(m * 255 / iterations)
             display.set_pen(colour,0,155)
             display.pixel(x, y)
-        print(x)
+        #uncomment this line if you want to see the progress the plot has made if you are not updating the screen every x    
+        #print(x)
+        #if you put the display update here it will update every x line
+        display.update()
+    #if you put the display update here it will update at the end of processing (maybe 2 to 3 minutes in)
+    #display.update()    
     go = False
-display.update()    
+        
+
 
