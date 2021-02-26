@@ -13,7 +13,7 @@ display.init(display_buffer)
 #display.set_backlight(1.0)
 
 
-iterations = 80
+iterations = 40
 
 def mandelbrot(c):
     z = 0
@@ -26,13 +26,14 @@ def mandelbrot(c):
 #Zoom too much on the wrong part may give no visible part of the fractal on the display
 #the smaller the zoom amount the longer the picture may take to generate.
 zoom = 1
+
 # Plot window
 RealStart = -2 * zoom
 RealEnd= 1 * zoom
-ImaginaryStart = -1 *zoom
-ImaginaryEnd = 1 *zoom
+ImaginaryStart = -1 * zoom
+ImaginaryEnd = 1 * zoom
 
-palette = []
+
 display.clear()
 #One of the issues on the video was it was displaying the old images whilst generating the new one
 #So added the update below to send a clear screen to the display
