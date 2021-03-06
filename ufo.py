@@ -15,8 +15,9 @@ display.set_backlight(1.0)
 ufogrid = ["000001111100000","000111111111000","001111111111100","011011011010110","111111111111111","001110011011100","000100000001000"]
 
 
-
-class ufo:
+#Lack of capitalisation on ufo meant that the reset routine didnt work with TypeError: 'ufo' object isn't callable.  
+#This was because the main loop through ufos overwrote the class once the game started.  So capital Ufo for the class makes it a different object than ufo
+class Ufo:
     def __init__(self, x, y, r, dx, dy, pen):
         self.x = x
         self.y = y
@@ -58,7 +59,7 @@ class Missile:
 area51 = []
 for i in range(0, 25):
     area51.append(
-        ufo(
+        Ufo(
             random.randint(0, width),
             random.randint(0, height),
             random.randint(0, 10) + 3,
@@ -128,7 +129,7 @@ while True:
         area51 = []
         for i in range(0, 25):
             area51.append(
-                ufo(
+                Ufo(
                     random.randint(0, width),
                     random.randint(0, height),
                     random.randint(0, 10) + 3,
@@ -141,3 +142,4 @@ while True:
     display.update()
     #display.set_led(0,0,0)
     #time.sleep(0.01)
+
